@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conjunctions for Year 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #1e293b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        .presentation-container {
+            max-width: 900px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .slide {
+            display: none;
+            flex-grow: 1;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+        }
+        /* New CSS to ensure the first slide is always visible by default */
+        .slide:first-of-type {
+            display: flex;
+        }
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0c4a6e;
+            margin-bottom: 1rem;
+        }
+        .slide-content {
+            font-size: 1.25rem;
+            line-height: 1.75;
+        }
+        .nav-buttons {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+        }
+        .nav-btn {
+            padding: 0.75rem 2rem;
+            background-color: #6366f1;
+            color: white;
+            border-radius: 9999px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .nav-btn:hover {
+            background-color: #4f46e5;
+        }
+        .nav-btn:active {
+            transform: scale(0.98);
+        }
+        .nav-btn[disabled] {
+            background-color: #9ca3af;
+            cursor: not-allowed;
+        }
+        .conjunctions-list li {
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            margin: 0.5rem;
+            color: white;
+        }
+        .and { background-color: #ef4444; }
+        .but { background-color: #3b82f6; }
+        .or { background-color: #22c55e; }
+        .because { background-color: #f97316; }
+
+        .interactive-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .sentence-parts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .word-btn {
+            padding: 0.5rem 1rem;
+            background-color: #e2e8f0;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .word-btn:hover {
+            background-color: #cbd5e1;
+        }
+        .quiz-option {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .quiz-option.correct { background-color: #16a34a; }
+        .quiz-option.incorrect { background-color: #dc2626; }
+        .quiz-option.correct:hover { background-color: #15803d; }
+        .quiz-option.incorrect:hover { background-color: #b91c1c; }
+        .quiz-feedback {
+            margin-top: 1rem;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .video-card {
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .video-embed-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+        .video-embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .presentation-container {
+                padding: 1rem;
+                min-height: 500px;
+            }
+            .slide-title {
+                font-size: 2rem;
+            }
+            .slide-content {
+                font-size: 1rem;
+            }
+            .nav-btn {
+                padding: 0.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="presentation-container">
+        <!-- Slide 1 -->
+        <div id="slide-1" class="slide">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-8">Conjunctions (Joining Words)</h1>
+            <p class="text-xl">Let's learn how to join words and ideas together!</p>
+            <div class="mt-8 text-6xl">🧩🔗</div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div id="slide-2" class="slide">
+            <h2 class="slide-title">Lesson Objective</h2>
+            <ul class="text-left slide-content list-none pl-0 space-y-4">
+                <li class="flex items-center">
+                    <span class="mr-3 text-2xl">✅</span> Conjunctions are joining words
+                </li>
+                <li class="flex items-center">
+                    <span class="mr-3 text-2xl">✅</span> and, but, or, because
+                </li>
+                <li class="flex items-center">
+                    <span class="mr-3 text-2xl">✅</span> How to join 2 short sentences into 1
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div id="slide-3" class="slide">
+            <h2 class="slide-title">Warm-Up</h2>
+            <p class="slide-content text-gray-700">I like cats. I like dogs.</p>
+            <p class="slide-content font-bold mt-4">Can we make one long sentence?</p>
+            <p id="warmup-answer" class="slide-content text-green-600 font-extrabold mt-4" style="display: none;">I like cats and dogs.</p>
+        </div>
+        
+        <!-- Slide 4 - Conjunctions Song -->
+        <div id="slide-4" class="slide">
+            <h2 class="slide-title">Conjunctions Song!</h2>
+            <div class="video-container">
+                <div class="video-card">
+                    <h3 class="font-bold text-lg mb-2">Conjunctions Song (Junc-Func by Melissa)</h3>
+                    <p class="text-sm text-gray-600 mb-4">by GrammarSongs by Melissa</p>
+                    <div class="video-embed-container">
+                        <iframe src="https://www.youtube.com/embed/_yarxGq1Ens" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 5 - Conjunctions Explained -->
+        <div id="slide-5" class="slide">
+            <h2 class="slide-title">Video: Conjunctions Explained</h2>
+            <div class="video-container">
+                <div class="video-card">
+                    <h3 class="font-bold text-lg mb-2">Conjunctions – English Grammar Lessons</h3>
+                    <p class="text-sm text-gray-600 mb-4">by Ellii (formerly ESL Library)</p>
+                    <div class="video-embed-container">
+                        <iframe src="https://www.youtube.com/embed/3qbfcHiUrcI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div id="slide-6" class="slide">
+            <h2 class="slide-title">What are Conjunctions?</h2>
+            <p class="slide-content font-bold text-gray-700">Conjunctions are **joining words**. They join sentences or ideas together.</p>
+            <div class="mt-8 text-6xl">🔗</div>
+        </div>
+
+        <!-- Slide 7 -->
+        <div id="slide-7" class="slide">
+            <h2 class="slide-title">The 4 Conjunctions</h2>
+            <ul class="conjunctions-list flex flex-wrap justify-center mt-4">
+                <li class="and">and</li>
+                <li class="but">but</li>
+                <li class="or">or</li>
+                <li class="because">because</li>
+            </ul>
+        </div>
+
+        <!-- Slide 8 -->
+        <div id="slide-8" class="slide">
+            <h2 class="slide-title">“and”</h2>
+            <p class="slide-content font-bold text-gray-700">Joins similar ideas</p>
+            <p class="slide-content mt-4">Example: I like bread and butter.</p>
+            <div class="mt-8 text-6xl">🍞🧈</div>
+        </div>
+
+        <!-- Slide 9 -->
+        <div id="slide-9" class="slide">
+            <h2 class="slide-title">More "and"</h2>
+            <p class="slide-content mt-4">More examples for "and":</p>
+            <ul class="slide-content text-left list-disc pl-8 mt-4 space-y-2">
+                <li>I have a pen and a pencil.</li>
+                <li>I play football and basketball.</li>
+                <li>My mum is happy and proud.</li>
+            </ul>
+        </div>
+
+        <!-- Slide 10 -->
+        <div id="slide-10" class="slide">
+            <h2 class="slide-title">“but”</h2>
+            <p class="slide-content font-bold text-gray-700">Shows difference</p>
+            <p class="slide-content mt-4">Example: I am small but strong.</p>
+            <div class="mt-8 text-6xl">👶💪</div>
+        </div>
+
+        <!-- Slide 11 -->
+        <div id="slide-11" class="slide">
+            <h2 class="slide-title">More "but"</h2>
+            <p class="slide-content mt-4">More examples for "but":</p>
+            <ul class="slide-content text-left list-disc pl-8 mt-4 space-y-2">
+                <li>I want to play, but it is raining.</li>
+                <li>The sun is shining, but it is cold.</li>
+                <li>I like pizza, but my friend likes salad.</li>
+            </ul>
+        </div>
+
+        <!-- Slide 12 -->
+        <div id="slide-12" class="slide">
+            <h2 class="slide-title">“or”</h2>
+            <p class="slide-content font-bold text-gray-700">Gives a choice</p>
+            <p class="slide-content mt-4">Example: Do you want milk or juice?</p>
+            <div class="mt-8 text-6xl">🥛🧃</div>
+        </div>
+
+        <!-- Slide 13 -->
+        <div id="slide-13" class="slide">
+            <h2 class="slide-title">More "or"</h2>
+            <p class="slide-content mt-4">More examples for "or":</p>
+            <ul class="slide-content text-left list-disc pl-8 mt-4 space-y-2">
+                <li>Are you going to walk or ride a bike?</li>
+                <li>Would you like tea or coffee?</li>
+                <li>You can have an apple or a pear.</li>
+            </ul>
+        </div>
+
+        <!-- Slide 14 -->
+        <div id="slide-14" class="slide">
+            <h2 class="slide-title">“because”</h2>
+            <p class="slide-content font-bold text-gray-700">Gives a reason</p>
+            <p class="slide-content mt-4">Example: I stayed home because it rained.</p>
+            <div class="mt-8 text-6xl">🏠🌧️</div>
+        </div>
+
+        <!-- Slide 15 -->
+        <div id="slide-15" class="slide">
+            <h2 class="slide-title">More "because"</h2>
+            <p class="slide-content mt-4">More examples for "because":</p>
+            <ul class="slide-content text-left list-disc pl-8 mt-4 space-y-2">
+                <li>I was happy because I got a gift.</li>
+                <li>He was tired because he ran a lot.</li>
+                <li>She wore a jacket because it was cold.</li>
+            </ul>
+        </div>
+
+        <!-- Slide 16 -->
+        <div id="slide-16" class="slide">
+            <h2 class="slide-title">Sentence Race!</h2>
+            <p class="slide-content font-bold text-gray-700">Join the sentences quickly!</p>
+            <p class="slide-content mt-4">I like apples. I like bananas. → ???</p>
+        </div>
+
+        <!-- Slide 17 - Sentence Builder -->
+        <div id="slide-17" class="slide">
+            <h2 class="slide-title">Sentence Builder</h2>
+            <p class="slide-content font-bold text-gray-700">Click the words to build a sentence!</p>
+            <div class="interactive-section">
+                <div id="sentence-display" class="border border-gray-300 rounded-lg p-4 bg-gray-50 min-h-[5rem]"></div>
+                <div id="word-bank" class="sentence-parts">
+                    <button class="word-btn">I</button>
+                    <button class="word-btn">was</button>
+                    <button class="word-btn">happy</button>
+                    <button class="word-btn and">and</button>
+                    <button class="word-btn but">but</button>
+                    <button class="word-btn or">or</button>
+                    <button class="word-btn because">because</button>
+                    <button class="word-btn">she</button>
+                    <button class="word-btn">laughed</button>
+                    <button class="word-btn">loudly</button>
+                    <button class="word-btn">.</button>
+                </div>
+            </div>
+            <button id="clear-btn" class="nav-btn mt-4">Clear</button>
+        </div>
+
+        <!-- Slide 18 -->
+        <div id="slide-18" class="slide">
+            <h2 class="slide-title">Worksheet Practice</h2>
+            <div class="slide-content text-left space-y-4">
+                <div class="flex flex-col md:flex-row items-center justify-start gap-2">
+                    <p>I like milk ___ juice.</p>
+                    <div class="flex gap-2">
+                        <button class="quiz-option or">or</button>
+                        <button class="quiz-option and">and</button>
+                        <button class="quiz-option but">but</button>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-start gap-2">
+                    <p>She is tired ___ she is smiling.</p>
+                    <div class="flex gap-2">
+                        <button class="quiz-option but">but</button>
+                        <button class="quiz-option and">and</button>
+                        <button class="quiz-option because">because</button>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-start gap-2">
+                    <p>I stayed inside ___ it was hot.</p>
+                    <div class="flex gap-2">
+                        <button class="quiz-option and">and</button>
+                        <button class="quiz-option because">because</button>
+                        <button class="quiz-option or">or</button>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-start gap-2">
+                    <p>I have a cat ___ a dog.</p>
+                    <div class="flex gap-2">
+                        <button class="quiz-option and">and</button>
+                        <button class="quiz-option or">or</button>
+                        <button class="quiz-option but">but</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 19 -->
+        <div id="slide-19" class="slide">
+            <h2 class="slide-title">Wrap-Up Quiz</h2>
+            <p class="slide-content font-bold text-gray-700">Click on the correct conjunction!</p>
+            <div id="quiz-container" class="interactive-section">
+                <!-- Quiz questions will be inserted here by JS -->
+            </div>
+            <p id="quiz-feedback" class="quiz-feedback"></p>
+        </div>
+
+        <!-- Slide 20 -->
+        <div id="slide-20" class="slide">
+            <h2 class="slide-title">Recap</h2>
+            <ul class="text-left slide-content list-none pl-0 space-y-4">
+                <li class="flex items-center">
+                    <span class="mr-3 text-2xl">✅</span> Conjunctions are joining words.
+                </li>
+                <li class="flex items-center">
+                    <span class="mr-3 text-2xl">✅</span> The 4 we learned: and, but, or, because.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Slide 21 -->
+        <div id="slide-21" class="slide">
+            <h2 class="slide-title">Homework</h2>
+            <p class="slide-content font-bold text-gray-700">Write 4 sentences using:</p>
+            <ul class="conjunctions-list flex flex-wrap justify-center mt-4">
+                <li class="and">and</li>
+                <li class="but">but</li>
+                <li class="or">or</li>
+                <li class="because">because</li>
+            </ul>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button id="prevBtn" class="nav-btn" disabled>Previous</button>
+            <button id="nextBtn" class="nav-btn">Next</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentSlide = 0;
+
+            const showSlide = (index) => {
+                slides.forEach((slide) => {
+                    slide.style.display = 'none';
+                });
+                slides[index].style.display = 'flex';
+                // Check if the current slide is the quiz slide and render it
+                if (index === 18) {
+                    renderQuiz();
+                }
+            };
+
+            const updateButtons = () => {
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === slides.length - 1;
+                
+                // Show/hide specific elements based on slide index
+                if (currentSlide === 2) {
+                    document.getElementById('warmup-answer').style.display = 'block';
+                } else {
+                    document.getElementById('warmup-answer').style.display = 'none';
+                }
+            };
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                    updateButtons();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                    updateButtons();
+                }
+            });
+
+            // Sentence Builder Logic (Slide 17)
+            const sentenceDisplay = document.getElementById('sentence-display');
+            const wordBank = document.getElementById('word-bank');
+            const clearBtn = document.getElementById('clear-btn');
+            
+            if (wordBank) {
+                wordBank.addEventListener('click', (event) => {
+                    if (event.target.classList.contains('word-btn')) {
+                        sentenceDisplay.textContent += event.target.textContent + ' ';
+                    }
+                });
+            }
+
+            if (clearBtn) {
+                clearBtn.addEventListener('click', () => {
+                    sentenceDisplay.textContent = '';
+                });
+            }
+
+            // Fill-in-the-blanks logic (Slide 18)
+            const fillInBlanks = document.querySelectorAll('#slide-18 .quiz-option');
+            fillInBlanks.forEach(btn => {
+                btn.addEventListener('click', (event) => {
+                    const parent = event.target.closest('.flex-col');
+                    const textContent = parent.querySelector('p').textContent;
+                    const correctMap = {
+                        'I like milk ___ juice.': 'or',
+                        'She is tired ___ she is smiling.': 'but',
+                        'I stayed inside ___ it was hot.': 'because',
+                        'I have a cat ___ a dog.': 'and'
+                    };
+                    const correct = correctMap[textContent.trim().replace(event.target.textContent, '___')];
+                    if (event.target.textContent === correct) {
+                         event.target.style.backgroundColor = '#16a34a'; // Green
+                    } else {
+                         event.target.style.backgroundColor = '#dc2626'; // Red
+                    }
+                });
+            });
+
+            // Wrap-up Quiz Logic (Slide 19)
+            const quizContainer = document.getElementById('quiz-container');
+            const quizFeedback = document.getElementById('quiz-feedback');
+            const quizQuestions = [
+                {text: 'I am happy ___ I got a gift.',
+                    options: ['and', 'because', 'but'],
+                    correct: 'because' },
+                {text: 'Do you want to play inside ___ outside?',
+                    options: ['because', 'or', 'and'],
+                    correct: 'or'},
+                {text: 'The dog is big ___ fluffy.',
+                    options: ['but', 'or', 'and'],
+                    correct: 'and'
+                }
+            ];
+
+            const renderQuiz = () => {
+                quizContainer.innerHTML = '';
+                quizFeedback.textContent = '';
+                quizQuestions.forEach(q => {
+                    const questionDiv = document.createElement('div');
+                    questionDiv.className = 'flex flex-col md:flex-row items-center justify-start gap-2 mb-4';
+                    
+                    const questionText = document.createElement('p');
+                    questionText.textContent = q.text;
+                    questionText.className = 'slide-content';
+                    questionDiv.appendChild(questionText);
+
+                    const optionsDiv = document.createElement('div');
+                    optionsDiv.className = 'flex gap-2';
+
+                    q.options.forEach(option => {
+                        const optionBtn = document.createElement('button');
+                        optionBtn.textContent = option;
+                        optionBtn.className = 'quiz-option';
+                        optionBtn.classList.add(option);
+                        optionBtn.addEventListener('click', () => checkAnswer(option, q.correct));
+                        optionsDiv.appendChild(optionBtn);
+                    });
+
+                    questionDiv.appendChild(optionsDiv);
+                    quizContainer.appendChild(questionDiv);
+                });
+            };
+
+            const checkAnswer = (selected, correct) => {
+                if (selected === correct) {
+                    quizFeedback.textContent = 'Correct!';
+                    quizFeedback.style.color = '#16a34a';
+                } else {
+                    quizFeedback.textContent = 'Try again!';
+                    quizFeedback.style.color = '#dc2626';
+                }
+            };
+        });
+    </script>
+</body>
+</html>
